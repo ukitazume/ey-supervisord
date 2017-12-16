@@ -43,7 +43,7 @@ if node['supervisord']['is_the_instance']
   end
 
   execute "reload" do
-    command "monit reload && supervisorctl reload"
+    command "monit reload && supervisord start all && supervisorctl reload"
   end
 
 end
